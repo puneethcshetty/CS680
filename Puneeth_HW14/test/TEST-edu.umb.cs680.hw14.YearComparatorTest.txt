@@ -1,0 +1,8 @@
+Testcase: edu.umb.cs680.hw14.YearComparatorTest
+Test: checkCar6AfterSort() took 0 milli sec(s)
+Test: checkCar5AfterSort() took 0 milli sec(s)
+Test: checkCar4AfterSort() took 1 milli sec(s)
+Test: checkCar3AfterSort() took 0 milli sec(s)
+Test: checkCar2AfterSort() took 0 milli sec(s)
+Test: checkCar1AfterSort() took 0 milli sec(s)
+Tests run: 6, Failures: 0, Skipped: 0, Aborted: 0, Time elapsed: 6 milli sec(s)

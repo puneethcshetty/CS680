@@ -1,0 +1,35 @@
+Testcase: edu.umb.cs680.hw10.StockQuoteObservableTest
+Test: checkDijaQuote() took 5 milli sec(s)
+Tests run: 1, Failures: 0, Skipped: 0, Aborted: 0, Time elapsed: 12 milli sec(s)
+------------- Standard Output ---------------
+
+ ThreeDObserver Notified:
+ Ticker: ABC
+ Quote: 10.0
+
+
+ TableObserver Notified:
+ Ticker: ABC
+ Quote: 10.0
+
+
+ PiechartObserver Notified: 
+ Ticker:ABC
+ Quote: 10.0
+
+
+ ThreeDObserver Notified:
+ Ticker: XYZ
+ Quote: 27.0
+
+
+ TableObserver Notified:
+ Ticker: XYZ
+ Quote: 27.0
+
+
+ PiechartObserver Notified: 
+ Ticker:XYZ
+ Quote: 27.0
+
+------------- ---------------- ---------------

@@ -1,0 +1,12 @@
+Testcase: edu.umb.cs680.hw02.StudentTest
+Test: testGetPriorState() took 11 milli sec(s)
+Test: testCreateIntlStudent() took 0 milli sec(s)
+Test: testGetTuition() took 0 milli sec(s)
+Test: testGetName() took 0 milli sec(s)
+Test: testCreateOutStateStudent() took 0 milli sec(s)
+Test: testCreateInStateStudent() took 1 milli sec(s)
+Test: testGetForeignAddr() took 0 milli sec(s)
+Test: testGetI20num() took 1 milli sec(s)
+Test: testGetUsAddr() took 0 milli sec(s)
+Test: testGetYrsInState() took 0 milli sec(s)
+Tests run: 10, Failures: 0, Skipped: 0, Aborted: 0, Time elapsed: 26 milli sec(s)

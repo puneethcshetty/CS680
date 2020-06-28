@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="Puneeth_HW6">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="classpath">
+        <pathelement location="bin"/>
+        <pathelement location="test/bin"/>
+        <pathelement path="${env.JUNIT}"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <mkdir dir="test/bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="test/bin">
+            <fileset dir="test/src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="test/bin"/>
+    </target>
+    <target depends="clean, build-project, LinkTest, RunLink" name="build"/>
+    
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="test/bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="test/src"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+    
+    <target name="RunLink">
+        <java classname="edu.umb.cs680.hw06.Directory" classpath="bin" failonerror="true" fork="yes"/>
+        <java classname="edu.umb.cs680.hw06.FSElement" classpath="bin" failonerror="true" fork="yes"/>
+        <java classname="edu.umb.cs680.hw06.File" classpath="bin" failonerror="true" fork="yes"/>
+        <java classname="edu.umb.cs680.hw06.FileSystem" classpath="bin" failonerror="true" fork="yes"/>
+        <java classname="edu.umb.cs680.hw06.Link" classpath="bin" failonerror="true" fork="yes"/>
+    </target>
+    
+    <target name="LinkTest">
+		<junitlauncher printSummary="yes">
+			<classpath refid="classpath" />
+			<testclasses outputdir="test">
+				<fileset dir="test/bin">
+					<include name="edu/umb/cs680/hw06/*Test.class" />
+				</fileset>
+				<listener type="legacy-plain" sendSysOut="true" />
+			</testclasses>
+		</junitlauncher>
+	</target>
+</project>
